@@ -1,0 +1,231 @@
+/* styles */
+
+/* size of margin, border and padding is included in size of element 
+   in internal CSS calculations */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* font stack */
+  font-family: 'Ariel', sans-serif;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  /* item spacing will be controlled by flex-grow */
+  
+  min-height: 100vh;
+  /* the height of the body is at least the height of the viewport */
+  /* needed to make sticky footer work */
+  
+}
+
+
+
+header {
+  font-family: 'Dancing Script', cursive;
+  font-size: xx-large;
+  margin: 20px;
+}
+
+main {
+
+  width: 60%;
+  margin: auto;
+
+  /* flex item commands */
+  flex-grow: 1;  /* take one share of any extra space */
+}
+
+
+div.imageWrapper {
+  width: 70%;
+  max-width: 500px;
+}
+
+img#serverImage {
+  width: 100%;
+}
+
+div#controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  /*background: #e6e2cf;*/
+  
+  border-radius:10px;
+  
+}
+
+input#fileChooser {
+  display: none;
+}
+
+
+.imageChooser {
+  /*
+  width: 300px;
+  height: 300px;
+  border: 1px;
+  padding: 50px;
+  margin: 30px;
+  border-style: dashed;
+  font-size: x-large;
+  text-align:center;
+  */
+  
+  /*
+  padding: 150px 110px;
+  border: 1px dashed black;
+  */
+}
+
+.flower {
+  font-family: 'Indie Flower', cursive;
+  line-height: 1.2;
+}
+
+.script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.cang {
+  font-family: 'Long Cang', cursive;
+}
+
+.apple {
+  font-family: 'Homemade Apple', cursive;
+  font-size: .75em;
+  line-height: 2em;
+}
+
+
+.postcard {
+/*   background: #eceeeb; */
+  background: #e6e2cf;
+  margin: 2em 0;
+  display: flex;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cardImg {
+  max-width: 100%;
+  max-height: 100%;
+  display: none;
+}
+
+
+
+
+
+.upload {
+  justify-content: center;
+}
+
+
+
+.btn {
+  border: 1px solid;
+  background-color: Transparent;
+  padding: 8px 20px;
+  border-radius: 0px;
+  font-weight: bold;
+  margin: .5em;
+  flex-shrink: 0;
+}
+
+.upload .btn {
+    border: none;
+    font-size: 1.25em;
+}
+
+#message {
+  min-height: 40vh;
+  border-left: 1px solid black;
+  flex: 1;
+  padding: 1em;
+}
+
+[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+}
+
+h3 {
+  margin: .5em 0;
+}
+
+.edit {
+  display: flex;
+/*   display: none; */
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.edit .btn {
+  margin-top: 2em;
+}
+
+.fonts {
+  margin-right: 1em;
+  flex-shrink: 0;
+}
+
+.fonts label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.fonts input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+}
+
+footer {
+  /*
+  position: absolute;
+  bottom: 0;
+  */
+  /* flex item commands */
+  flex-grow: 0;  /* I don't take up any extra space */
+  
+  /* flex container commands */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.glitchButton {
+  margin: .5em;
+}
+.color {
+  display: flex;
+  flex-flow: row wrap;
+}
+.color-button {
+  width: 2em;
+  height: 2em;
+  margin: .25em;
+}
+.color-button1 {background-color: #e6e2cf;}
+.color-button2 {background-color: #dbcaac;}
+.color-button3 {background-color: #c9cbb3;}
+.color-button4 {background-color: #bbc9ca;}
+.color-button5 {background-color: #a6a5b5;}
+.color-button6 {background-color: #b5a6ab;}
+.color-button7 {background-color: #eccfcf;}
+.color-button8 {background-color: #eceeeb;}
+.color-button9 {background-color: #bab9b5;}
