@@ -1,0 +1,100 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show me!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Homemade+Apple|Indie+Flower|Long+Cang&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+
+    <header>
+      <h1>
+         Daily Postcard Creator 
+      </h1>
+    </header>
+    
+    <main>
+      <div class="postcard">
+        <div class="image upload">
+          <div class="imageWrapper">
+            <img id="serverImage"/>
+          </div>
+
+          <div id="controls">
+            <label for="fileChooser">Choose Image</label>
+            <input type="file" id="fileChooser" accept="image/png, .jpeg, .jpg, image/gif">   
+          </div>
+          
+        </div>
+        <div contenteditable="true" placeholder="Write your message here!" id="message" class="flower"></div> <!-- no white space for placeholder -->
+      </div>
+    
+      <div class="edit">
+        <div class="fonts">
+          <h3>
+            Choose your font
+          </h3>
+          <form id="fonts">
+            <label for="flower" class="flower">
+              <span>&#10070;</span>
+              Indie Flower
+              <input type="radio" id="flower" name="font" value="flower" checked="true">
+            </label>
+            <label for="script" class="script">
+              <span>&#11046;</span>
+              Dancing Script
+              <input type="radio" id="script" name="font" value="script">
+            </label>
+            <label for="cang" class="cang">
+              <span>&#11046;</span>
+              Long Cang
+              <input type="radio" id="cang" name="font" value="cang">
+            </label>
+            <label for="apple" class="apple">
+              <span>&#11046;</span>
+              Homemade Apple
+              <input type="radio" id="apple" name="font" value="apple">
+            </label>
+          </form>     
+          </div>
+          <div class="color-picker">
+            <h3>
+              Choose your color
+            </h3>
+            <div class="color">
+              <div class="color-button color-button1"></div>
+              <div class="color-button color-button2"></div>
+              <div class="color-button color-button3"></div>
+              <div class="color-button color-button4"></div>
+              <div class="color-button color-button5"></div>
+              <div class="color-button color-button6"></div>
+              <div class="color-button color-button7"></div>
+              <div class="color-button color-button8"></div>
+              <div class="color-button color-button9"></div>      
+            </div>
+        </div>
+        <button class="btn" id="share">Share postcard</button>
+      </div>
+    </main>
+    
+ 
+    <footer>
+      <p class="msg">
+         Made on Glitch!
+      </p>
+       <!-- adds the glitch button at the bottom -->
+    
+    <script src="https://button.glitch.me/button.js"></script>
+    <script src="./script.js"></script>
+    </footer>
+  
+  </body>
+</html>

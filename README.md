@@ -1,5 +1,4 @@
-# Postcard
+# ECS 162 Assignment 2
 
-This is the Assignment 2 of ECS 162.
-
-It consists of both server code and browser code.
+Postcard
+  
