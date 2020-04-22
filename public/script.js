@@ -13,6 +13,7 @@ function uploadFile() {
     // name of field, the file itself, and its name
     formData.append('newImage',selectedFile, selectedFile.name);
     
+    let label = document.querySelector('#controls label');
     // build a browser-style HTTP request data structure
     const xhr = new XMLHttpRequest();
     // it will be a POST request, the URL will this page's URL+"/upload" 
@@ -25,8 +26,11 @@ function uploadFile() {
         // now that the image is on the server, we can display it!
         let newImage = document.getElementById("serverImage");
         newImage.src = "../images/"+selectedFile.name;
+        newImage.style.display = 'block';
+        document.querySelector('.image').classList.remove('upload');
+        label.textContent = 'Replace Image';
     }
-  
+    label.textContent = "Uploading..."
     // actually send the request
     xhr.send(formData);
 }
@@ -94,7 +98,7 @@ colorButton.forEach(function (button,index){
 });
 
 //write json file
-const fs = require('fs')
+
 let share_button = document.getElementById("share");
 
 share_button.addEventListener("click", function () {
@@ -105,12 +109,15 @@ share_button.addEventListener("click", function () {
     "font":currentFontName,
     "color":colors[currentIndex]
   }
+  
+  console.log(data);
   var xhr = new XMLHttpRequest(); 
-  xhr.open("POST", '/data');
+  xhr.open("POST", '/display',true);
   xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhr.onloadend = function(e) {
     console.log(xhr.responseText);
     window.location = "https://postcard-wxiwang.glitch.me/display.html";
   }
   xhr.send(JSON.stringify(data));
+  
 })
