@@ -60,3 +60,46 @@ app.post('/upload', uploadMulter.single('newImage'), function (request, response
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+
+//write json file
+const fs = require('fs');
+
+app.post('/display',express.json(),function(req, res) {
+  let postcardObj = req.body;
+  let postcardJSON = JSON.stringify(postcardObj);
+  fs.writeFile('./postcardData.json', postcardJSON, (err) => {
+    
+    if (err) {
+      console.error(err)
+      return
+    }
+    //file written successfully
+  })
+  if(req.body){
+    res.end("Server recieved "+req.body);
+  }
+  else throw 'error: req.body undefined';
+});
+
+
+//read json file
+app.get('/shoppingList',function(req,res){
+  console.log("answering query");
+  //const data = require('./postcardData.json');
+  //console.log(data);
+  //res.json(data);
+  
+  fs.readFile('./postcardData.json', 'utf8', (err, fileContents) => {
+    if (err) {
+      console.error(err)
+      return
+    }
+    try {
+      const data = JSON.parse(fileContents);
+      res.json(data);
+    } catch(err) {
+      console.error(err)
+    }
+  })
+})
