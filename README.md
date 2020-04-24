@@ -1,6 +1,6 @@
 # ECS 162 Assignment 2: Postcard
 
-This Postcard app let users select their favorite fonts and colors, write down their message, click the share button and then they can share their own postcard to their friends!
+This Postcard app let users select their favorite fonts and colors, write down their messages, click the share button and then they can share their own postcard to their friends!
 
 The link to this app is https://postcard-wxiwang.glitch.me
 
