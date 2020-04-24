@@ -5,4 +5,5 @@ This Postcard app let users select their favorite fonts and color, write down th
 Main features:
 
 · This project incldues both browser and server code.
+
 · Use json to store the information of a postcard.
